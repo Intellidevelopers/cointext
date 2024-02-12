@@ -18,6 +18,129 @@
     <link rel="apple-touch-icon-precomposed" href="images/logo/48.png" />
 
     <title>Recharge</title>
+    <style>
+        .select-menu{
+    width: 415px;
+}
+.select-menu .select-btn{
+    display: flex;
+    height: 55px;
+    background: #252525;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border: 1px solid grey;
+}
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+}
+.select-menu.active .select-btn i{
+    transform: rotate(-180deg);
+}
+.select-menu .options{
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    display: none;
+}
+.select-menu.active .options{
+    display: block;
+}
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+.options .option:hover{
+    background: #F2F2F2;
+}
+.option i{
+    font-size: 25px;
+    margin-right: 12px;
+}
+.option .option-text{
+    font-size: 18px;
+    color: #333;
+}
+.sBtn-text{
+    color: white;
+}
+    </style>
+
+<style>
+    .select-menus{
+width: 415px;
+}
+.select-menus .select-btns{
+display: flex;
+height: 55px;
+background: #252525;
+padding: 20px;
+font-size: 18px;
+font-weight: 400;
+border-radius: 8px;
+align-items: center;
+cursor: pointer;
+justify-content: space-between;
+box-shadow: 0 0 5px rgba(0,0,0,0.1);
+border: 1px solid grey;
+}
+.select-btns i{
+font-size: 25px;
+transition: 0.3s;
+}
+.select-menus.active .select-btns i{
+transform: rotate(-180deg);
+}
+.select-menus .options{
+position: relative;
+padding: 20px;
+margin-top: 10px;
+border-radius: 8px;
+background: #fff;
+box-shadow: 0 0 3px rgba(0,0,0,0.1);
+display: none;
+}
+.select-menus.active .options{
+display: block;
+}
+.options .options{
+display: flex;
+height: 55px;
+cursor: pointer;
+padding: 0 16px;
+border-radius: 8px;
+align-items: center;
+background: #fff;
+}
+.options .option:hover{
+background: #F2F2F2;
+}
+.options i{
+font-size: 25px;
+margin-right: 12px;
+}
+.options .option-texts{
+font-size: 18px;
+color: #333;
+}
+.sBtn-texts{
+color: white;
+}
+</style>
 </head>
 
 <body>
@@ -31,45 +154,175 @@
 
     <div class="header fixed-top bg-surface d-flex justify-content-center align-items-center">
         <a href="javascript:void(0);" class="left back-btn"><i class="icon-left-btn"></i></a>
-        <h3>Recharge</h3>
+        <h3>Flash Coin</h3>
     </div>
-    <div class="pt-45 pb-90">
-        <div class="tf-container">
-            <div class="mt-4 accent-box-v2 bg-menuDark">
-                <div class="d-flex justify-content-between align-items-center">
-                    <span>Your Balance:</span>
-                    <h5>$3.466,9</h5>
+    <form action="">
+        <div class="pt-45 pb-90">
+            <div class="tf-container">
+                <div class="mt-4 accent-box-v2 bg-menuDark">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span>Your Balance:</span>
+                        <h5>$3.466,9</h5>
+                    </div>
+                    
+                    <div class="mt-12 box-input-field">
+                        <input type="text" value="50" required class="clear-ip value_input ip-style2">
+                        <i class="icon-close"></i>
+                    </div>
                 </div>
-                <div class="mt-12 box-input-field">
-                    <input type="text" value="50" required class="clear-ip value_input ip-style2">
-                    <i class="icon-close"></i>
+
+                <div class="mt-4 accent-box-v2 bg-menuDark">
+                    <div class="select-menu">
+                        <div class="select-btn">
+                            <span class="sBtn-text">Select Coins</span>
+                            <i class="bx bx-chevron-down"></i>
+                        </div>
+                
+                        <ul class="options">
+                            <li class="option">
+                                <i class="bx bxl-github" style="color: #171515;"></i>
+                                <span class="option-text">usd_coin</span>
+                            </li>
+                            <li class="option">
+                                <i class="bx bxl-instagram-alt" style="color: #E1306C;"></i>
+                                <span class="option-text">Solana</span>
+                            </li>
+                            <li class="option">
+                                <i class="bx bxl-linkedin-square" style="color: #0E76A8;"></i>
+                                <span class="option-text">Tether</span>
+                            </li>
+                            <li class="option">
+                                <i class="bx bxl-facebook-circle" style="color: #4267B2;"></i>
+                                <span class="option-text">Litecoin</span>
+                            </li>
+                            <li class="option">
+                                <i class="bx bxl-twitter" style="color: #1DA1F2;"></i>
+                                <span class="option-text">Dodgecoin</span>
+                            </li>
+                            <li class="option">
+                                <i class="bx bxl-twitter" style="color: #1DA1F2;"></i>
+                                <span class="option-text">Bitco</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
+                <div class="mt-4 accent-box-v2 bg-menuDark">
+                    <div class="select-menus">
+                        <div class="select-btns">
+                            <select name="" id="">
+                                <option>Select Network</option>
+                                <option value="">Trc_20</option>
+                                <option value="">Erc_20</option>
+                                <option value="">Bep_20</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                </div>
+                <h5 class="mt-20">Amount Money</h5>
+                <ul class="grid-3 gap-12 mt-16">
+                    <li><a href="javascript:void(0);" class="tag-money active text-small">$50</span></a></li>
+                    <li><a href="javascript:void(0);" class="tag-money text-small">$100</span></a></li>
+                    <li><a href="javascript:void(0);" class="tag-money text-small">$200</span></a></li>
+                    <li><a href="javascript:void(0);" class="tag-money text-small">$500</span></a></li>
+                    <li><a href="javascript:void(0);" class="tag-money text-small">$1000</span></a></li>
+                    <li><a href="javascript:void(0);" class="tag-money text-small">$2000</span></a></li>
+                </ul>
+                <div class="mt-4 accent-box-v2 bg-menuDark">
+                   
+                    <div class="mt-12 box-input-field">
+                        <input type="text" class="clear-ip  ip-style2" placeholder="Public Key" required>
+                        <i class="icon-close"></i>
+                    </div>
+                    <div class="mt-12 box-input-field">
+                        <input type="text" class="clear-ip  ip-style2" placeholder="Private Key" required>
+                        <i class="icon-close"></i>
+                    </div>
+                    <div class="mt-12 box-input-field">
+                        <input type="text" class="clear-ip  ip-style2" placeholder="Receivers address" required>
+                        <i class="icon-close"></i>
+                    </div>
+                    <h5 class="mt-20">Total Gas Fee:</h5>
+                </div>    
             </div>
-            <h5 class="mt-20">Amount Money</h5>
-            <ul class="grid-3 gap-12 mt-16">
-                <li><a href="javascript:void(0);" class="tag-money active text-small">$50</span></a></li>
-                <li><a href="javascript:void(0);" class="tag-money text-small">$100</span></a></li>
-                <li><a href="javascript:void(0);" class="tag-money text-small">$200</span></a></li>
-                <li><a href="javascript:void(0);" class="tag-money text-small">$500</span></a></li>
-                <li><a href="javascript:void(0);" class="tag-money text-small">$1000</span></a></li>
-                <li><a href="javascript:void(0);" class="tag-money text-small">$2000</span></a></li>
-            </ul>
-            
         </div>
-    </div>
 
     <div class="menubar-footer footer-fixed bg-surface">
         <div class="inner-bar">
-            <a href="payment-confirm.html" class="tf-btn lg primary">Confirm</a>
+                <button type="submit"><a href="success.html">Comfirm</a></button>
         </div>
     </div>
+    </form>
+        <!-- account -->
+        <div class="modal fade action-sheet" id="accountWallet">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span>Proxies</span>
+                        <span class="icon-cancel" data-bs-dismiss="modal"></span>
+                    </div>
+                    <ul class="mt-20 pb-16">
+                        <li data-bs-dismiss="modal"><div class="d-flex justify-content-between align-items-center gap-8 text-large item-check active dom-value">USA<i class="icon icon-check-circle"></i> </div></li>
+                        <li class="mt-4" data-bs-dismiss="modal"><div class="d-flex  justify-content-between gap-8 text-large item-check dom-value">Canada<i class="icon icon-check-circle"></i></div></li>
+                        <li class="mt-4" data-bs-dismiss="modal"><div class="d-flex  justify-content-between gap-8 text-large item-check dom-value">Japan<i class="icon icon-check-circle"></i></div></li>
+                        <li class="mt-4" data-bs-dismiss="modal"><div class="d-flex  justify-content-between gap-8 text-large item-check dom-value">Korea<i class="icon icon-check-circle"></i></div></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
     
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
+    <script>
+        function getSelectedOption() {
+          // Get the selected option from the dropdown
+          const dropdown = document.getElementById('dropdown');
+          const selectedOption = dropdown.options[dropdown.selectedIndex].value;
     
+          // Display the selected option (you can modify this part based on your requirements)
+          alert(`Selected Option: ${selectedOption}`);
+        }
+      </script>
 </body>
+<script>
+    const optionMenu = document.querySelector(".select-menu"),
+   selectBtn = optionMenu.querySelector(".select-btn"),
+   options = optionMenu.querySelectorAll(".option"),
+   sBtn_text = optionMenu.querySelector(".sBtn-text");
 
+selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));       
+
+options.forEach(option =>{
+option.addEventListener("click", ()=>{
+    let selectedOption = option.querySelector(".option-text").innerText;
+    sBtn_text.innerText = selectedOption;
+
+    optionMenu.classList.remove("active");
+});
+});
+</script>
+
+<script>
+ 
+ const optionMenus = document.querySelector(".select-menus"),
+   selectBtns = optionMenus.querySelector(".select-btns"),
+   optionss = optionMenus.querySelectorAll(".optionss"),
+   sBtn_texts = optionMenus.querySelector(".sBtn-texts");
+
+selectBtns.addEventListener("click", () => optionMenus.classList.toggle("active"));       
+
+options.forEach(option =>{
+options.addEventListener("click", ()=>{
+    let selectedOption = option.querySelector(".option-texts").innerText;
+    sBtn_texts.innerText = selectedOption;
+
+    optionMenus.classList.remove("active");
+});
+});
+</script>
 <!-- Mirrored from themesflat.co/html/cointexcrypto/cointex/recharge.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 20:50:47 GMT -->
 </html>

@@ -1,60 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from themesflat.co/html/cointexcrypto/cointex/success.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 20:50:53 GMT -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Success</title>
+  <style>
+    /* Optional: Add some basic styling for better appearance */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #121212;
+      color: #09c87c;
+    }
 
-    <!-- font -->
-    <link rel="stylesheet" href="fonts/fonts.css">
-    <!-- Icons -->
-    <link rel="stylesheet" href="fonts/font-icons.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet"type="text/css" href="css/styles.css"/>
+    #loadingText {
+      font-size: 24px;
+    }
 
-   
-    <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="images/logo/48.png" />
-    <link rel="apple-touch-icon-precomposed" href="images/logo/48.png" />
-
-    <title>camera</title>
+    #loadingAnimation {
+      font-size: 36px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-
 <body>
 
-  
-    <div class="bg-camera">
-        <div class="tf-container">
-            <div class="pt-30 pb-30">
-                <div class="success_box">
-                    <div class="icon-1 ani3">
-                        <span class="circle-box lg bg-circle check-icon bg-primary"></span>
-                    </div>
-                    <div class="icon-2 ani5">
-                        <span class="circle-box md bg-primary"></span>
-                    </div>
-                    <div class="icon-3 ani8">
-                        <span class="circle-box md bg-primary"></span>
-                    </div>
-                    <div class="icon-4 ani2">
-                        <span class="circle-box sm bg-primary"></span>
-                    </div>
-                    <h2 class="text-surface text-center">Successful!</h2>
-                    <p class="text-large text-center mt-8">Your personal information has been verified</p>
-                    <a href="home.html" class="tf-btn lg primary mt-40">Done</a>
-                </div>
-            </div>
-           
-                
-        </div>
-    </div>
+  <div id="loadingText">Hacking into the system...</div>
+  <div id="loadingAnimation">Loading...</div>
 
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    
+  <script>
+    // Simulate the loading process with changing text and animation
+    const loadingTextElement = document.getElementById('loadingText');
+    const loadingAnimationElement = document.getElementById('loadingAnimation');
+
+    function simulateTransaction() {
+      setTimeout(() => {
+        updateText('Transaction processing...');
+        updateAnimation('25%'); // Update animation
+
+        setTimeout(() => {
+          updateText('Transaction verifying...');
+          updateAnimation('50%'); // Update animation
+
+          setTimeout(() => {
+            updateText('Transaction verified!');
+            updateAnimation('✓'); // Update animation
+
+            setTimeout(() => {
+              updateText('Validating transaction...');
+              updateAnimation('75%'); // Update animation
+
+              setTimeout(() => {
+                updateText('Transaction processing...');
+                updateAnimation('100%'); // Update animation
+
+                // Add more steps as needed...
+
+                // Final success message
+                setTimeout(() => {
+                  updateText('Transaction successful!');
+                  updateAnimation('✓');
+                  window.location.href = 'history.html'; // Replace with your actual redirect URL // Update animation
+                }, 5000);
+              }, 5000);
+            }, 5000);
+          }, 5000);
+        }, 5000);
+      }, 5000);
+    }
+
+    // Function to update loading text
+    function updateText(text) {
+      loadingTextElement.innerText = text;
+    }
+
+    // Function to update loading animation
+    function updateAnimation(animation) {
+      loadingAnimationElement.innerText = animation;
+    }
+
+    // Start the simulation when the page loads
+    window.onload = simulateTransaction;
+  </script>
+
 </body>
-
-<!-- Mirrored from themesflat.co/html/cointexcrypto/cointex/success.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 20:50:53 GMT -->
 </html>

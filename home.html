@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from themesflat.co/html/cointexcrypto/cointex/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 20:49:22 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
@@ -14,6 +12,7 @@
     <link rel="stylesheet"type="text/css" href="css/styles.css"/>
 
    
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="images/logo/48.png" />
     <link rel="apple-touch-icon-precomposed" href="images/logo/48.png" />
@@ -51,13 +50,13 @@
     <div class="pt-68 pb-80">
         <div class="bg-menuDark tf-container">
             <div class="pt-12 pb-12 mt-4">
-                <h5><span class="text-primary">My Wallet</span> - <a href="#" class="choose-account" data-bs-toggle="modal" data-bs-target="#accountWallet"><span class="dom-text">Account 1 </span> &nbsp;<i class="icon-select-down"></i></a> </h5>
+                <h5><span class="text-primary">My Wallet</span> - <a href="#" class="choose-account" data-bs-toggle="modal" data-bs-target="#accountWallet"><span class="dom-text">Connect VPN</span> &nbsp;<i class="icon-select-down"></i></a> </h5>
                 <h1 class="mt-16"><a href="#">$2159,34</a></h1>
                 <ul class="mt-16 grid-4 m--16">
                     <li>
-                        <a href="choose-payment.html" class="tf-list-item d-flex flex-column gap-8 align-items-center">
+                        <a href="recharge.html" class="tf-list-item d-flex flex-column gap-8 align-items-center">
                             <span class="box-round bg-surface d-flex justify-content-center align-items-center"><i class="icon icon-way"></i></span>
-                            Send
+                            Flash
                         </a>
                     </li>
                     <li>
@@ -766,12 +765,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span>Wallet</span>
+                    <span>Proxies</span>
                     <span class="icon-cancel" data-bs-dismiss="modal"></span>
                 </div>
                 <ul class="mt-20 pb-16">
-                    <li data-bs-dismiss="modal"><div class="d-flex justify-content-between align-items-center gap-8 text-large item-check active dom-value">Account 1 <i class="icon icon-check-circle"></i> </div></li>
-                    <li class="mt-4" data-bs-dismiss="modal"><div class="d-flex  justify-content-between gap-8 text-large item-check dom-value">Account 2<i class="icon icon-check-circle"></i></div></li>
+                    <li data-bs-dismiss="modal"><div class="d-flex justify-content-between align-items-center gap-8 text-large item-check active dom-value">USA<i class="icon icon-check-circle"></i> </div></li>
+                    <li class="mt-4" data-bs-dismiss="modal"><div class="d-flex  justify-content-between gap-8 text-large item-check dom-value">Canada<i class="icon icon-check-circle"></i></div></li>
+                    <li class="mt-4" data-bs-dismiss="modal"><div class="d-flex  justify-content-between gap-8 text-large item-check dom-value">Japan<i class="icon icon-check-circle"></i></div></li>
+                    <li class="mt-4" data-bs-dismiss="modal"><div class="d-flex  justify-content-between gap-8 text-large item-check dom-value">Korea<i class="icon icon-check-circle"></i></div></li>
                 </ul>
             </div>
             
@@ -905,7 +906,57 @@
 
     <script type="text/javascript" src="js/main.js"></script>
 
-   
+   <script>
+   // app.js
+
+window.onload = function () {
+  // Display SweetAlert modal onload with input field and validation
+  Swal.fire({
+    title: 'Account Activation',
+    text: 'Please enter your 10-digit activation code:',
+    input: 'text',
+    inputAttributes: {
+      autocapitalize: 'off',
+      maxlength: 10,  // Set maximum length to 10 characters
+    },
+    showCancelButton: true,
+    confirmButtonText: 'Verify',
+    cancelButtonText: 'Cancel',
+    showLoaderOnConfirm: true,
+    inputValidator: (value) => {
+      // Validate the input value
+      if (!value || value.length !== 10 || !/^\d+$/.test(value)) {
+        return 'Please enter a valid 10-digit activation code.';
+      }
+    },
+    preConfirm: (verificationCode) => {
+      // You can perform additional verification logic here
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          // Mock success, replace this with your actual verification logic
+          resolve();
+        }, 2000);
+      });
+    },
+    allowOutsideClick: () => !Swal.isLoading()
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: 'Verification Successful!',
+        text: 'You have successfully verified your account.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire({
+        title: 'Verification Canceled',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
+  });
+};
+   </script>
     
 </body>
 
