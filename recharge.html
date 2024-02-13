@@ -20,7 +20,7 @@
     <title>Recharge</title>
     <style>
         .select-menu{
-    width: 415px;
+    width: 315px;
 }
 .select-menu .select-btn{
     display: flex;
@@ -140,6 +140,7 @@ color: #333;
 .sBtn-texts{
 color: white;
 }
+
 </style>
 </head>
 
@@ -208,7 +209,7 @@ color: white;
                 </div>
 
                 <div class="mt-4 accent-box-v2 bg-menuDark">
-                    <div class="select-menus">
+                    <div style="width: 315px;" class="select-menus">
                         <div class="select-btns">
                             <select name="" id="">
                                 <option>Select Network</option>
@@ -323,6 +324,35 @@ options.addEventListener("click", ()=>{
     optionMenus.classList.remove("active");
 });
 });
+</script>
+<script>
+    // app.js (recharge.html)
+
+window.onload = function () {
+  // ... (existing code)
+
+  document.querySelector('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Your form submission logic here...
+
+    // Save a random transaction history in localStorage
+    const transactionHistory = [
+      'vdjhvjhdbshvhvhsu6quheg7ygyvd',
+      'a8gyr5vnbuhtnvmrhtn3vynbhty',
+      'p9gfr85htgvmnm78vc45gvmvhy'
+      // Add more transaction history entries as needed
+    ];
+    const randomIndex = Math.floor(Math.random() * transactionHistory.length);
+    const randomTransaction = transactionHistory[randomIndex];
+
+    localStorage.setItem('randomTransaction', randomTransaction);
+
+    // Redirect to history.html after form submission
+    window.location.href = 'history.html';
+  });
+};
+
 </script>
 <!-- Mirrored from themesflat.co/html/cointexcrypto/cointex/recharge.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 20:50:47 GMT -->
 </html>

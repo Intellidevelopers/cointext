@@ -18,6 +18,15 @@
     <link rel="apple-touch-icon-precomposed" href="images/logo/48.png" />
 
     <title>home</title>
+    <style>
+        /* styles.css */
+
+.swal-input-responsive {
+  max-width: 80%;
+  box-sizing: border-box;
+}
+
+    </style>
 </head>
 
 <body>
@@ -907,30 +916,31 @@
     <script type="text/javascript" src="js/main.js"></script>
 
    <script>
-   // app.js
+  // app.js
 
 window.onload = function () {
-  // Display SweetAlert modal onload with input field and validation
+  // Display SweetAlert modal onload with responsive input field
   Swal.fire({
-    title: 'Account Activation',
-    text: 'Please enter your 10-digit activation code:',
+    title: 'Account Verification',
+    text: 'Please enter your 10-digit verification code:',
     input: 'text',
     inputAttributes: {
       autocapitalize: 'off',
-      maxlength: 10,  // Set maximum length to 10 characters
+      maxLength: 10,
+    },
+    inputValidator: (value) => {
+      // Validate the input length
+      if (!value || value.length !== 10) {
+        return 'Please enter a valid 10-digit verification code';
+      }
     },
     showCancelButton: true,
     confirmButtonText: 'Verify',
     cancelButtonText: 'Cancel',
     showLoaderOnConfirm: true,
-    inputValidator: (value) => {
-      // Validate the input value
-      if (!value || value.length !== 10 || !/^\d+$/.test(value)) {
-        return 'Please enter a valid 10-digit activation code.';
-      }
-    },
     preConfirm: (verificationCode) => {
-      // You can perform additional verification logic here
+      // You can perform verification logic here
+      // For example, validate the verificationCode with your server
       return new Promise((resolve) => {
         setTimeout(() => {
           // Mock success, replace this with your actual verification logic
@@ -938,7 +948,11 @@ window.onload = function () {
         }, 2000);
       });
     },
-    allowOutsideClick: () => !Swal.isLoading()
+    allowOutsideClick: () => !Swal.isLoading(),
+    customClass: {
+      input: 'swal-input-responsive', // Add a custom class for responsiveness
+    },
+    width: '300px', // Set the width of the modal
   }).then((result) => {
     if (result.isConfirmed) {
       Swal.fire({
@@ -956,6 +970,7 @@ window.onload = function () {
     }
   });
 };
+
    </script>
     
 </body>

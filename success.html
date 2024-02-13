@@ -65,7 +65,19 @@
                 setTimeout(() => {
                   updateText('Transaction successful!');
                   updateAnimation('✓');
-                  window.location.href = 'history.html'; // Replace with your actual redirect URL // Update animation
+                  
+                  // Generate a random transaction history
+                  const transactionHistory = [
+                    'vdjhvjhdbshvhvhsu6quheg7ygyvd - Processing',
+                    'a8gyr5vnbuhtnvmrhtn3vynbhty - Completed',
+                    'p9gfr85htgvmnm78vc45gvmvhy - Failed'
+                    // Add more transaction history entries as needed
+                  ];
+                  const randomIndex = Math.floor(Math.random() * transactionHistory.length);
+                  const randomTransaction = transactionHistory[randomIndex];
+                  
+                  // Redirect to history.html with the transaction data as a query parameter
+                  window.location.href = `history.html?transaction=${encodeURIComponent(randomTransaction)}`;
                 }, 5000);
               }, 5000);
             }, 5000);
