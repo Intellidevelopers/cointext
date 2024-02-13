@@ -1,0 +1,93 @@
+<!-- vpn.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VPN Connect</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #191919;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+  }
+
+  .container {
+    text-align: center;
+    background-color: rgb(19, 1, 120);
+    width: 50%;
+    padding: 100px;
+    border-radius: 200px 0px 200px 150px;
+  }
+
+  select {
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .connect-button {
+    background-color: #3c3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+
+  .connect-button.green {
+    background-color: green;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>VPN Connect</h1>
+  <select id="vpnServers">
+    <option value="china">China</option>
+    <option value="usa">USA</option>
+    <option value="japan">Japan</option>
+    <option value="egypt">Egypt</option>
+    <option value="korea">Korea</option>
+    <option value="florida">Florida</option>
+  </select>
+  <br><br>
+  <button id="connectButton" class="connect-button">Connect</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  document.getElementById('connectButton').addEventListener('click', function() {
+    // Simulating VPN connection
+    setTimeout(function() {
+      // Change button color to green
+      document.getElementById('connectButton').classList.add('green');
+      // Get the selected VPN server
+      const selectedServer = document.getElementById('vpnServers').value;
+      // Save the selected server to localStorage for use on the home page
+      localStorage.setItem('selectedServer', selectedServer);
+      // Display SweetAlert message for successful connection
+      Swal.fire({
+        icon: 'success',
+        title: 'VPN Connected Successfully!',
+        showConfirmButton: false,
+        timer: 1500
+      }).then(function() {
+        // Redirect to home.html after the SweetAlert message disappears
+        window.location.href = 'home.html';
+      });
+    }, 2000); // Simulating 2 seconds for connection process
+  });
+</script>
+
+</body>
+</html>

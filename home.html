@@ -59,7 +59,7 @@
     <div class="pt-68 pb-80">
         <div class="bg-menuDark tf-container">
             <div class="pt-12 pb-12 mt-4">
-                <h5><span class="text-primary">My Wallet</span> - <a href="#" class="choose-account" data-bs-toggle="modal" data-bs-target="#accountWallet"><span class="dom-text">Connect VPN</span> &nbsp;<i class="icon-select-down"></i></a> </h5>
+                <h5><span class="text-primary">You are connected to: </span> <a href="vpn.html" class="choose-account" ><span class="dom-text" id="selectedServerText"></span> &nbsp;</a> </h5>
                 <h1 class="mt-16"><a href="#">$2159,34</a></h1>
                 <ul class="mt-16 grid-4 m--16">
                     <li>
@@ -81,9 +81,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="earn.html" class="tf-list-item d-flex flex-column gap-8 align-items-center">
+                        <a href="vpn.html" class="tf-list-item d-flex flex-column gap-8 align-items-center">
                             <span class="box-round bg-surface d-flex justify-content-center align-items-center"><i class="icon icon-exchange"></i></span>
-                            Earn
+                            VPN
                         </a>
                     </li>
                 </ul>
@@ -972,7 +972,15 @@ window.onload = function () {
 };
 
    </script>
-    
+    <script>
+        // Retrieve the selected VPN server from localStorage
+        const selectedServer = localStorage.getItem('selectedServer');
+        // Display the selected server on the home page
+        if (selectedServer) {
+          const selectedServerText = document.getElementById('selectedServerText');
+          selectedServerText.textContent += selectedServer;
+        }
+      </script>
 </body>
 
 <!-- Mirrored from themesflat.co/html/cointexcrypto/cointex/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Feb 2024 20:49:39 GMT -->
