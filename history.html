@@ -33,14 +33,14 @@
     </div>
     <!-- /preload --> 
     <div class="header fixed-top bg-surface">
-        <a href="javascript:void(0);" class="left back-btn"><i class="icon-left-btn"></i></a>
+        <a href="home.html" class="left back-btn"><i class="icon-left-btn"></i></a>
         <a href="home.html" class="right"><i class="icon-home2 fs-20"></i></a>
 
     </div>
     <div class="pt-45 pb-16">
         <div class="tf-container">
             <h4>Transaction History</h4>
-            <a href="verification.html" class="mt-16 d-flex justify-content-between align-items-center">
+            <a href="javascript:void(0)" class="mt-16 d-flex justify-content-between align-items-center">
                 <div class="box-left">
                     <span class="text-red">Processing</span>
                 </div>
@@ -48,70 +48,156 @@
             <a href="#" class="mt-16 pb-12 line-bt d-flex justify-content-between align-items-center">
          
             </a>
-            <ul class="mt-16 pb-12 line-bt">
-                
-                <li>
-                    <a href="javascript:void(0);" class="mt-16 d-flex justify-content-between align-items-center">
-                        <p class="text-small" id="transactionHistory"></p>
-                        <span class="text-secondary d-flex gap-8 align-items-center" style="color: green;"></span>
-                    </a>
-                </li>
-
-               
             </ul>
            
         </div>
     </div>
     <!-- modal logout -->
    
-    <!-- modal change profile -->
-    <div class="modal fade modalCenter" id="changeProfile">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content modal-sm">
-                <div class="p-16 line-bt">
-                    <h4 class="text-center">Change profile picture</h4>
-                    <p class="mt-2 text-center text-large">Your profile picture will be visible to other users and you can change your profile picture after 30 days.</p>
-                </div>
-                <div class="grid-2">
-                   <a href="#" class="line-r text-center text-button fw-6 p-12" data-bs-dismiss="modal">Cancel</a>
-                   <a href="#" class="text-center text-button fw-6 p-12 text-primary" data-bs-toggle="modal" data-bs-target="#filterPicture">Done</a>
-                </div>
-               
-            </div>
-        </div>
-    </div>
-    <!-- modal change profile picture-->
-    <div class="modal fade action-sheet" id="filterPicture">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span>Picture</span>
-                    <span class="icon-cancel" data-bs-dismiss="modal"></span>
-                </div>
-                <ul class="mt-20 pb-16">
-                    <li data-bs-dismiss="modal"><div class="d-flex justify-content-between align-items-center gap-8 text-large  item-check active">Take a photo <i class="icon icon-check-circle"></i> </div></li>
-                    <li class="mt-4" data-bs-dismiss="modal"><div class="d-flex  justify-content-between gap-8 text-large item-check">Select photo from album <i class="icon icon-check-circle"></i></div></li>
+    <div class="bg-menuDark tf-container">
+        <div class="tf-tab pt-12 mt-4">
+            <div class="tab-slide">
+                <ul class="nav nav-tabs wallet-tabs" role="tablist" >
+                    <li class="item-slide-effect"></li>
+                    <li class="nav-item active" role="presentation">   
+                        <button class="nav-link active"  data-bs-toggle="tab" data-bs-target="#history">History</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#market">Market</button>
+                    </li>
+                    
+                    
                 </ul>
             </div>
-            
-        </div>
-    </div>
-     <!-- account -->
-     <div class="modal fade action-sheet" id="account">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span>Wallet</span>
-                    <span class="icon-cancel" data-bs-dismiss="modal"></span>
+            <div class="tab-content pt-16 pb-16">
+                <div class="tab-pane fade active show" id="history" role="tabpanel">
+                    <ul>
+                        <li>
+                            <a href="choose-payment.html" class="coin-item style-1 gap-12 bg-surface">
+                                <img src="images/coin/coin-1.jpg" alt="img" class="img">
+                                <div class="content">
+                                    <div class="title">
+                                        <p class="mb-4 text-large">Bitcoin</p>
+                                        <span class="text-secondary">11:34 AM</span>
+                                    </div>
+                                    <div class="box-price">
+                                        <p class="text-small mb-4"><span class="text-primary">+</span> BTC 0.0056</p>
+                                        <p class="text-end"><span class="text-red">-</span> $950.50</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mt-8">
+                            <a href="choose-payment.html" class="coin-item style-1 gap-12 bg-surface">
+                                <img src="images/coin/coin-2.jpg" alt="img" class="img">
+                                <div class="content">
+                                    <div class="title">
+                                        <p class="mb-4 text-large">Withdraw</p>
+                                        <span class="text-secondary">1:12 PM</span>
+                                    </div>
+                                       
+                                    <p class="text-small"><span class="text-red">-</span> 2,700.00</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mt-8">
+                            <a href="choose-payment.html" class="coin-item style-1 gap-12 bg-surface">
+                                <img src="images/coin/coin-3.jpg" alt="img" class="img">
+                                <div class="content">
+                                    <div class="title">
+                                        <p class="mb-4 text-large">Ethereum</p>
+                                        <span class="text-secondary">12:00 AM</span>
+                                    </div>
+                                    <div class="box-price">
+                                        <p class="text-small mb-4"><span class="text-primary">+</span> ETH 1,498</p>
+                                        <p class="text-end"><span class="text-red">-</span> $12948,68</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mt-8">
+                            <a href="choose-payment.html" class="coin-item style-1 gap-12 bg-surface">
+                                <img src="images/coin/coin-4.jpg" alt="img" class="img">
+                                <div class="content">
+                                    <div class="title">
+                                        <p class="mb-4 text-large">Anchor</p>
+                                        <span class="text-secondary">12:00 AM</span>
+                                    </div>
+                                    <div class="box-price">
+                                        <p class="text-small mb-4"><span class="text-primary">+</span> ETH 1,498</p>
+                                        <p class="text-end"><span class="text-red">-</span> $12948,68</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="mt-20 pb-16">
-                    <li data-bs-dismiss="modal"><div class="d-flex justify-content-between align-items-center gap-8 text-large item-check active">Account 1 <i class="icon icon-check-circle"></i> </div></li>
-                    <li class="mt-4" data-bs-dismiss="modal"><div class="d-flex  justify-content-between gap-8 text-large item-check">Account 2<i class="icon icon-check-circle"></i></div></li>
-                </ul>
+                <div class="tab-pane fade" id="market" role="tabpanel">
+                    <ul>
+                        <li>
+                            <a href="choose-payment.html" class="coin-item style-1 gap-12 bg-surface">
+                                <img src="images/coin/coin-1.jpg" alt="img" class="img">
+                                <div class="content">
+                                    <div class="title">
+                                        <p class="mb-4 text-large">Bitcoin</p>
+                                        <span class="text-secondary">11:34 AM</span>
+                                    </div>
+                                    <div class="box-price">
+                                        <p class="text-small mb-4"><span class="text-primary">+</span> BTC 0.0056</p>
+                                        <p class="text-end"><span class="text-red">-</span> $950.50</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mt-8">
+                            <a href="choose-payment.html" class="coin-item style-1 gap-12 bg-surface">
+                                <img src="images/coin/coin-2.jpg" alt="img" class="img">
+                                <div class="content">
+                                    <div class="title">
+                                        <p class="mb-4 text-large">Withdraw</p>
+                                        <span class="text-secondary">1:12 PM</span>
+                                    </div>
+                                       
+                                    <p class="text-small"><span class="text-red">-</span> 2,700.00</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mt-8">
+                            <a href="choose-payment.html" class="coin-item style-1 gap-12 bg-surface">
+                                <img src="images/coin/coin-3.jpg" alt="img" class="img">
+                                <div class="content">
+                                    <div class="title">
+                                        <p class="mb-4 text-large">Ethereum</p>
+                                        <span class="text-secondary">12:00 AM</span>
+                                    </div>
+                                    <div class="box-price">
+                                        <p class="text-small mb-4"><span class="text-primary">+</span> ETH 1,498</p>
+                                        <p class="text-end"><span class="text-red">-</span> $12948,68</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mt-8">
+                            <a href="choose-payment.html" class="coin-item style-1 gap-12 bg-surface">
+                                <img src="images/coin/coin-4.jpg" alt="img" class="img">
+                                <div class="content">
+                                    <div class="title">
+                                        <p class="mb-4 text-large">Anchor</p>
+                                        <span class="text-secondary">12:00 AM</span>
+                                    </div>
+                                    <div class="box-price">
+                                        <p class="text-small mb-4"><span class="text-primary">+</span> ETH 1,498</p>
+                                        <p class="text-end"><span class="text-red">-</span> $12948,68</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            
         </div>
     </div>
+</div>    
 
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
